@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="mainContainer">
-        <h1 class="weatherapp">Weather app</h1>
-    </div>
+    <section class="container">
+        <!-- search part -->
+        <form>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="Searched" placeholder="search your city">
+        </form>
+        <!-- middle body part -->
+     <div class="middlepart">
+        <h1 class="cityName">Kathmandu, Nepal</h1>
+        <p class="dateandtime">204-43-43</p>
+        <div class="weatherdata">
+            <p class="weatherforecast">cloudy</p>
+            <div class="weathericon">
+            </div>
+            <p class="weathertemperature">50°</p>
+            <div class="minmaxtemp">
+                <p class="mintemp">Min : 23°</p>
+                <p class="maxtemp">Max : 52°</p>
+            </div>
+
+         </div>
+                
+      </div>
+      <section class="weathercards">
+        <div class="weathercard">
+            <div class="cardicon">
+            <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="data">
+            <p class="title">feels like</p>
+            <p class="data">234°</p>
+            </div>
+        </div>
+        <div class="weathercard">
+            <div class="cardicon">
+            <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="data">
+            <p class="title">Humidity</p>
+            <p class="data">234°</p>
+            </div>
+        </div>
+        <div class="weathercard">
+            <div class="cardicon">
+           <i class="fa-solid fa-wind"></i>
+            </div>
+            <div class="data">
+            <p class="title">Wind</p>
+            <p class="data">23.5m/s</p>
+            </div>
+        </div>
+        <div class="weathercard">
+            <div class="cardicon">
+        <i class="fa-solid fa-gauge"></i>
+            </div>
+            <div class="data">
+            <p class="title">Pressure</p>
+            <p class="data">234hpa</p>
+            </div>
+        </div>
+
+    </section>
+    </section>
+    
+
+
+
+
 </body>
+
 </html>
