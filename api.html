@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hiiiiiiiiiiiiiiiii</h1>
+    
+    <script>
+         const url = "https://api.openweathermap.org/data/2.5/weather?q=Pokhara&appid=21e5c164bd740e911e96b5054f1fa9de&units=metric"
+        //  console.log(url);
+        async function getweather() {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+            
+        }
+        getweather();
+    </script>
+</body>
+</html>

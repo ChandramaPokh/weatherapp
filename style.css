@@ -27,11 +27,14 @@
     border-radius: 10px;
     padding: 10px;
     position: relative;
+    gap: 10px;
 }
 .weathercards{
+    width: 90%;
     margin-top: 10px;
     display: grid;
-    grid-template-columns:repeat(2,1fr) ;
+    
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
     padding: 15px;
     z-index: 2;
   
@@ -40,8 +43,7 @@
 
 }
 .weathercard{
-    width: 250px;
-    /* height: ; */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,18 +61,24 @@ i{
     gap: 20px;
 
 }
+
 form{
-    right: 120px;
+    /* width: 100%; */
+    display: flex;
+    /* justify-content: center; */
+
+    /* right: 120px; */
     position:relative;
 
     
 }
 input{
     padding-left: 25px;
-    width: 200px;
-    height: 22px;
+    width: 100%;
+    max-width: 300px;
     font-size: 16px;
-    /* margin-left: 10px; */
+   
+   
 }
 .fa-magnifying-glass{
     padding: 5px;
@@ -102,4 +110,15 @@ input{
     
 }
 
-  
+  @media (max-width: 600px){
+
+
+    .weathercards{
+        grid-template-columns:1fr;
+    }
+
+    input{
+        max-width:100%;
+    }
+
+}
