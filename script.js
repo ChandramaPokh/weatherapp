@@ -52,8 +52,23 @@ const getWeatherdata = async ()=>{
         
         const response = await fetch(url);
         const  data =  await response.json();
+
+       if (data.cod != 200) {
+    cityName.textContent = "City not found";
+    weatherforecast.style.display = "none";
+    weathericon.innerHTML = "";
+    weathertemperature.textContent = "--";
+    feelslike_data.textContent="";
+    humidity_data.textContent="";
+    pressure_data.textContent="";
+    wind_data.textContent="";
+    mintemp.textContent="Min : ";
+    maxtemp.textContent=" Max : "
+    return;
+}
+        
         console.log(data);
-        const {main,sys,weather, wind, name,dt}= data;
+        const {main,sys,weather, wind, name,dt, cod, message}= data;
         cityName.innerHTML = `${name}, ${getCountry(sys.country)} `;
          dateandtime.innerHTML = getDateandTime(dt);
          weatherforecast.innerHTML =weather[0].main;
@@ -62,10 +77,11 @@ const getWeatherdata = async ()=>{
          maxtemp.textContent = `Max : ${main.temp_max.toFixed()}°C`;
          mintemp.textContent =`Min : ${main.temp_min.toFixed()}°C`;
          feelslike_data.textContent = `${main.feels_like.toFixed()}°C`;
-         humidity_data.textContent =`${main.humidity}°C`;
+         humidity_data.textContent =`${main.humidity}%`;
          wind_data.textContent =`${wind.speed}m/s`;
          pressure_data.textContent =`${main.pressure}hPa`;
           Searched.value="";
+          
 
 
     } catch (error) {
