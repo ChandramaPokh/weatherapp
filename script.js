@@ -18,6 +18,21 @@ function getCountry(p){
     return new Intl.DisplayNames([p], { type: "region" }).of(p);
 
 }
+ 
+function getDateandTime(dt){
+     const newdate = new Date(dt*1000)
+     const options= {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric"
+};
+       const formatted = new Intl.DateTimeFormat("en-US",options);
+       return formatted.format(newdate);
+
+}
 
 
 const getWeatherdata = async ()=>{
@@ -33,6 +48,11 @@ const getWeatherdata = async ()=>{
         console.log(data);
        const {main,sys,weather, wind, name,dt}= data;
        cityName.innerHTML = `${name}, ${getCountry(sys.country)} `;
+          dateandtime.innerHTML = getDateandTime(dt);
+          weatherforecast.innerHTML =weather[0].main;
+          weathericon.innerHTML = `<img src ="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png">`
+      
+
 
 
     } catch (error) {
